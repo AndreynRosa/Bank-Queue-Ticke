@@ -1,0 +1,9 @@
+CREATE TABLE ticket (
+id INTEGER ,
+created_date DATE NOT NULL,
+status VARCHAR(20) NOT NULL,
+type VARCHAR(20) NOT NULL,
+number INTEGER,
+PRIMARY KEY(id)
+)
+

@@ -1,0 +1,54 @@
+version: "3"
+
+volumes:
+  my-db:
+services:
+  postgres:
+    image: postgres:9.4
+    volumes:
+      - my-db:/var/lib/postgres
+      - ./dbscripts/postgres:/docker-entrypoint-init.d
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    networks:
+      - project-network
+
+  app-web:
+    image: react-app
+    depends_on:
+      - postgres
+    stdin_open: true
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    volumes:
+      - "./app:/usr/src/app"
+    ports:
+      - "3000:3000"
+    networks:
+      - project-network
+
+  bank-queue-api:
+    image: queue-api
+    restart: always
+    depends_on:
+      - postgres
+    environment: 
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/mydb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - project-network
+
+networks:
+  project-network:
+    driver: bridge

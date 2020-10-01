@@ -1,6 +1,6 @@
 # Bank-Queue-Ticket
 
-<h2>Lyouts <h2/>
+<h2>Lyaouts <h2/>
  
  <h4>Home</h4>
   <p> Na Home  há duas funcionalidades </p>

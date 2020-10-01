@@ -5,15 +5,15 @@ import TicketView from '../../componets/TicketView';
 import QueueBtns from '../../componets/QueueBtns';
 
 const Home = () => {
-  const [genereateTicket, setGenereateTicket] = useState();
+  const [createdicket, setCreatedicket] = useState();
 
-  useEffect(() => {}, [genereateTicket, setGenereateTicket]);
+  useEffect(() => {}, [createdicket, setCreatedicket]);
   return (
     <>
       <Header />
       <MainContainer title={'Home'}>
-        <QueueBtns setGenereateTicket={setGenereateTicket} />
-        <TicketView generatedTicket={genereateTicket} />
+        <QueueBtns setCreatedicket={setCreatedicket} />
+        <TicketView createdicket={createdicket} />
       </MainContainer>
       {/*  */}
     </>

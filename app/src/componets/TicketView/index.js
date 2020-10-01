@@ -5,7 +5,7 @@ import { formaterNumberTicket } from '../../utils/ticketUtils';
 
 import { useStyles } from './styles';
 
-const TicketView = ({ generatedTicket }) => {
+const TicketView = ({ createdicket }) => {
   const [nextTikect, setNextTikect] = useState();
 
   const loadTikecetsView = useCallback(async () => {
@@ -26,7 +26,7 @@ const TicketView = ({ generatedTicket }) => {
     if (!nextTikect && !nextTikect?.id) {
       loadTikecetsView();
     }
-  }, [generatedTicket, nextTikect, loadTikecetsView]);
+  }, [createdicket, nextTikect, loadTikecetsView]);
   return (
     <div style={{ textAlign: 'center' }}>
       <Paper elevation={3} className={classes.root}>
@@ -34,10 +34,10 @@ const TicketView = ({ generatedTicket }) => {
           Senha Gerada
         </Typography>
         <Typography variant="h3">
-          {generatedTicket?.number
+          {createdicket?.number
             ? formaterNumberTicket(
-                generatedTicket?.number,
-                generatedTicket.type,
+              createdicket?.number,
+              createdicket.type,
               )
             : 0}
         </Typography>

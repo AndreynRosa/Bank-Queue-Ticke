@@ -4,17 +4,17 @@ import { generateTicket } from '../../service/TicketService';
 
 import { useStyles } from './styles';
 
-const QueueBtns = ({setGenereateTicket}) => {
+const QueueBtns = ({setCreatedicket}) => {
   const classes = useStyles();
 
   async function generateNormalTicket() {
     const resp = await generateTicket('NORMAL');
-    setGenereateTicket(resp.data);
+    setCreatedicket(resp.data);
   }
 
   async function generatePriorityTicket() {
     const resp = await generateTicket('PRIORITY');
-    setGenereateTicket(resp.data);
+    setCreatedicket(resp.data);
   }
 
   return (

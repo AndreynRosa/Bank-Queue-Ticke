@@ -10,16 +10,16 @@ const MainContainer = ({ children, title }) => {
     <>
       <Grid container className={classes.root}>
         <Grid item xs={3}></Grid>
+
         <Grid item xs={6}>
           <>
             <Paper className={classes.paperTitle}>
               <Typography variant="h3">{title}</Typography>
             </Paper>
-            <Paper className={classes.paperBody}>
-              {children}
-            </Paper>
+            <Paper className={classes.paperBody}>{children}</Paper>
           </>
         </Grid>
+
         <Grid item xs={3}></Grid>
       </Grid>
     </>

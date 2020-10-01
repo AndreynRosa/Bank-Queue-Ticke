@@ -13,7 +13,7 @@ export async function generateTicket(type){
   return resp;
 }
 
-export async function call(){
+export async function callNext(){
   const url =  `${API_URL}/ticket/call`;
   const resp = await put(url, null)
   return resp;

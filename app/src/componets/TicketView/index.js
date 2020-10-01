@@ -1,6 +1,6 @@
 import { Button, Paper, Typography } from '@material-ui/core';
 import React, { useCallback, useEffect, useState } from 'react';
-import { call, findAllByStatus } from '../../service/TicketService';
+import { callNext, findAllByStatus } from '../../service/TicketService';
 import { formaterNumberTicket } from '../../utils/ticketUtils';
 
 import { useStyles } from './styles';
@@ -14,7 +14,7 @@ const TicketView = ({ createdicket }) => {
   }, [setNextTikect]);
 
   async function callNextTicket() {
-    const resp = await call();
+    const resp = await callNext();
     if (resp && resp?.data) {
       setNextTikect(resp?.data);
     } else {
@@ -35,10 +35,7 @@ const TicketView = ({ createdicket }) => {
         </Typography>
         <Typography variant="h3">
           {createdicket?.number
-            ? formaterNumberTicket(
-              createdicket?.number,
-              createdicket.type,
-              )
+            ? formaterNumberTicket(createdicket?.number, createdicket.type)
             : 0}
         </Typography>
       </Paper>

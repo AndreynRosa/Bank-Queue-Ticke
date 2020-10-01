@@ -4,7 +4,7 @@
  
  <h4>Home</h4>
   <p> Na Home  há duas funcionalidades </p>
-  <p>1 - Gerar senhas prioritárias e normais e 2 - Chamar a <b>"PROXIMA SENHA"</b>  </p>
+  <p>1 - Gerar senhas prioritárias e normais, 2 - Chamar a <b>"PROXIMA SENHA"</b>  </p>
  
  
 ![home](https://user-images.githubusercontent.com/36086251/94809679-5556e500-03c9-11eb-9620-3c3d5bb89942.png)
@@ -42,7 +42,7 @@
 
 
 <h3> Utilizando Docker-Compose  </h3></br>
-Para subir o projeto usando docker, no diretório raiz do projeto reode o comando. </br>
+Para startar o projeto com docker, no diretório raiz do projeto reode o comando. </br>
 Isso pode levar alguns minutos.
 
 ```````

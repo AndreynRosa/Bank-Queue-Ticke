@@ -20,7 +20,7 @@ const Ticket = () => {
   async function restTicketNumbers() {
     const resp = await reset();
     if (resp.status === 200) {
-      alert('A numeração das senhas foi reiniciada. Vamos lhe redirecionar poara pagina home');
+      alert('A numeração das senhas foi reiniciada. Você foi redirecionado para home.');
     }
   }
   const loadTickets = useCallback(async () => {
